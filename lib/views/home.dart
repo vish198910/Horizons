@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import "package:flutter/material.dart";
 import 'package:horizons/constant.dart';
@@ -18,6 +20,10 @@ class _HomeState extends State<Home> {
       "Authorization":apikey
     });
     print(response.body.toString());
+
+    Map<String,dynamic> jsonData = jsonDecode(response.body);
+
+    jsonData["photos"].forEach((element){});
   }
   
   @override
