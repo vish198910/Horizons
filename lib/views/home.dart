@@ -2,9 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import "package:flutter/material.dart";
-import 'package:horizons/constant.dart';
+import 'package:horizons/constants.dart';
 import 'package:horizons/data/data.dart';
 import 'package:horizons/model/categories_model.dart';
+import 'package:horizons/model/wallpaper_model.dart';
 import 'package:http/http.dart' as http;
 class Home extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<CategoryModel> categories = new List();
+  List<WallpaperModel> wallpapers = new List();
 
   getCuratedPhotos() async {
     String curatedPhotosUrl = "https://api.pexels.com/v1/curated?per_page=25&page=1";
@@ -23,7 +25,14 @@ class _HomeState extends State<Home> {
 
     Map<String,dynamic> jsonData = jsonDecode(response.body);
 
-    jsonData["photos"].forEach((element){});
+    jsonData["photos"].forEach((element){
+      WallpaperModel wallpaperModel = new WallpaperModel();
+      wallpaperModel = WallpaperModel.fromMap(element);
+      wallpapers.add(wallpaperModel);
+    });
+    setState(() {
+      
+    });
   }
   
   @override
