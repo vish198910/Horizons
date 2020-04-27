@@ -1,6 +1,6 @@
 # horizons
 
-A new Flutter project.
+A Sample wallpaper application made in flutter.
 
 ## Getting Started
 
