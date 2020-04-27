@@ -2,6 +2,8 @@
 
 A Sample wallpaper application made in flutter.
 
+<img src="images/Screenshot_2020-04-27-10-53-38-956_com.example.horizons.jpg" height=500 width:500>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
